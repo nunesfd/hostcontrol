@@ -1,0 +1,184 @@
+.header {
+    dock: top;
+    height: 3;
+    content-align: center middle;
+    background: $primary;
+    color: $text;
+}
+
+.footer {
+    dock: bottom;
+    height: 3;
+    content-align: center middle;
+    background: $boost;
+    color: white;
+}
+
+.app-header {
+    height: 3;
+}
+
+.apply-hosts {
+    text-align: center;
+    background: $primary;
+    padding: 1;
+}
+
+Footer {
+    height: 3;
+    padding: 1;
+}
+
+.box-image ImagePixels {
+    width: 12;
+    height: 8;
+    background: red;
+}
+
+.box-full-center {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+}
+
+.box-message {
+    max-width: 80%;
+    background: $panel;
+    border: solid $primary;
+    padding: 1;
+    margin: 1;
+    text-align: center;
+}
+
+/* BOX START */
+.groups-grid {
+    padding: 1;
+}
+.box-grid {
+    layout: grid;
+    grid-size: 3;
+    grid-gutter: 1;
+}
+
+.box-grid .box {
+    height: auto;
+    border: heavy $accent;
+    padding: 1;
+}
+
+.box-grid .box.selected {
+    border: dashed $secondary;
+}
+
+.box-grid .box Label {
+    text-align: center;
+    width: 100%;
+}
+
+.box-grid .box Digits {
+    text-align: center;
+}
+/* BOX END */
+
+
+.form-host {
+    layout: vertical;
+}
+
+.form-row {
+    layout: horizontal;
+    background: $boost;
+    height: auto;
+    padding: 1;
+}
+
+.form-row Input {
+    width: 50%;
+}
+
+.modal-title {
+    width: 100%;
+    text-align: center;
+}
+
+.modal-question, .modal-message {
+    width: 100%;
+    text-align: center;
+}
+
+.modal {
+    align: center middle;
+}
+
+.modal .container {
+    width: auto;
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+}
+    
+.modal Horizontal {
+    height: auto;
+}
+
+.modal Vertical {
+    height: auto;
+}
+
+.modal .modal-buttons.center {
+    align: center top;
+}
+
+.modal .modal-buttons Button {
+    margin: 1 1 0 1;
+}
+/* MODALS END */
+
+/* MODALS SIZES START */
+.modal.confirmation .container {
+    width: 50;
+    height: auto;
+}
+
+.modal.alert .container {
+    width: 80%;
+    height: auto;
+}
+
+.modal.about .container {
+    width: 50;
+    height: auto;
+}
+
+.modal.group-form .container {
+    width: 45;
+    height: auto;
+}
+
+.modal.host-form .container {
+    width: 50;
+    height: auto;
+}
+
+.modal.host-form .host-input {
+    margin: 1 0 0 0;
+}
+/* MODALS SIZES END */
+
+.list-hosts ListItem{
+    padding: 1;
+}
+
+.list-hosts .ip-address{
+    width: 35%;
+}
+
+.list-hosts .host-name{
+    width: 65%;
+}
+
+.app-title {
+    width: 100%;
+    text-align: center;
+    margin: 1 0 0 0;
+}

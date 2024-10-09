@@ -1,0 +1,8 @@
+127.0.0.1  localhost
+127.0.0.1  local
+
+# BEGIN:2 - Local 0001
+192.168.200.1 bol.com.br
+127.0.0.1 uol.com.br
+127.0.0.1 testeadmin.com.br
+# END
