@@ -2,91 +2,94 @@
 
 # HostControl
 
-HostControl é uma aplicação desktop baseada em terminal, desenvolvida com Python e a biblioteca [Textual](https://github.com/Textualize/textual). Esta ferramenta foi projetada especificamente para gerenciar o arquivo `/etc/hosts`, proporcionando uma interface intuitiva que permite adicionar, editar e remover grupos de hosts de maneira simples e eficiente.
+[![English](https://img.shields.io/badge/lang-en-blue.svg)](./README.md)
+[![Português](https://img.shields.io/badge/lang-pt--BR-green.svg)](./README.pt-BR.md)
+
+HostControl is a terminal-based desktop application developed with Python and the [Textual](https://github.com/Textualize/textual) library. This tool is specifically designed to manage the `/etc/hosts` file, providing an intuitive interface that allows users to add, edit, and remove groups of hosts easily and efficiently.
 
 ![Hosts](https://raw.githubusercontent.com/nunesfd/hostcontrol/refs/heads/main/assets/screenshots/list_hosts.png)
 
-## Funcionalidades
+## Features
 
-- Gerenciar grupos de hosts (adicionar, editar, remover)
-- Visualizar o status de sincronização de cada grupo
-- Interface amigável baseada em terminal
-- Atalhos de teclado para ações rápidas
+- Manage groups of hosts (add, edit, remove)
+- View the synchronization status of each group
+- User-friendly terminal-based interface
+- Keyboard shortcuts for quick actions
 
-## Instalação
+## Installation
 
-### Pré-requisitos
+### Prerequisites
 
-Antes de instalar o HostControl, certifique-se de ter o seguinte instalado no seu sistema:
+Before installing HostControl, ensure you have the following installed on your system:
 
-- Python 3.8 ou mais recente
-- Pip (gerenciador de pacotes Python)
+- Python 3.8 or later
+- Pip (Python package manager)
 
-### 1. Clonar o repositório
+### 1. Clone the repository
 
-Para instalar o HostControl, primeiro clone o repositório do GitHub:
+To install HostControl, first clone the GitHub repository:
 
 ```bash
 git clone https://github.com/nunesfd/hostcontrol.git
 cd hostcontrol
 ```
 
-### 2. Criar e ativar um ambiente virtual (opcional, mas recomendado)
+### 2. Create and activate a virtual environment (optional but recommended)
 
-Criar um ambiente virtual irá isolar as dependências do projeto:
+Creating a virtual environment will isolate the project's dependencies:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Instalar as dependências
+### 3. Install dependencies
 
-Instale os pacotes Python necessários:
+Install the required Python packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Importante
+### 4. Important
 
-O arquivo `/etc/hosts` geralmente só pode ser modificado pelo superusuário (root), então é necessário conceder acesso ao app para que ele consiga gerenciar esse arquivo.
+The `/etc/hosts` file can usually only be modified by the superuser (root), so it is necessary to grant access to the app to manage this file.
 
-- **Executar como root:** Isso permite que o app tenha as permissões necessárias para alterar o arquivo.
-- **Alterar as permissões do arquivo:** Modifique as permissões de `/etc/hosts` para que sua conta de usuário possa ler e escrever no arquivo.
-- **Outras alternativas:** Também é possível usar grupos de usuários, configurar o arquivo `sudoers`, ou utilizar o **Polkit** para gerenciar as permissões de forma mais segura.
+- **Run as root:** This allows the app to have the necessary permissions to modify the file.
+- **Change file permissions:** Modify the permissions of `/etc/hosts` so your user account can read and write to the file.
+- **Other alternatives:** You can also use user groups, configure the `sudoers` file, or use **Polkit** to manage permissions more securely.
 
-#### Solução rápida para Linux ou Mac:
+#### Quick solution for Linux or Mac:
 ```sh
-sudo chown {MEU_USUARIO}:{MEU_USUARIO} /etc/hosts
+sudo chown {YOUR_USER}:{YOUR_USER} /etc/hosts
 ```
-> Essas são sugestões simples que podem resolver o problema. No entanto, você pode aplicar uma solução mais segura e personalizada, que se ajuste melhor ao seu ambiente, garantindo a integridade e a segurança do sistema.
+> These are simple suggestions that may resolve the issue. However, you can apply a more secure and customized solution that better fits your environment, ensuring the integrity and security of the system.
 
-### 5. Executar a aplicação
+### 5. Run the application
 
-Depois de instalar as dependências, você pode rodar o app usando:
+After installing the dependencies, you can run the app using:
 
 ```bash
 python main.py
 ```
 
-## Para usar em modo de desenvolvimento
+## To use in development mode
 
-### Rodar no modo de desenvolvimento
+### Run in development mode
 ```bash
 pip install textual-dev
 make start-dev
 ```
 
-### Rodar o console para debug
+### Run the console for debugging
 ```bash
 make start-console
 ```
 
-## Contribuições
+## Contributions
 
-Se você deseja contribuir com o projeto, fique à vontade para fazer um fork do repositório e criar um pull request. Todas as contribuições são bem-vindas!
+If you want to contribute to the project, feel free to fork the repository and create a pull request. All contributions are welcome!
 
-## Licença
+## License
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.
