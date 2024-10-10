@@ -1,6 +1,10 @@
+![Groups](https://raw.githubusercontent.com/nunesfd/hostcontrol/refs/heads/main/assets/screenshots/list_groups.png)
+
 # HostControl
 
 HostControl é uma aplicação desktop baseada em terminal, desenvolvida com Python e a biblioteca [Textual](https://github.com/Textualize/textual). Esta ferramenta foi projetada especificamente para gerenciar o arquivo `/etc/hosts`, proporcionando uma interface intuitiva que permite adicionar, editar e remover grupos de hosts de maneira simples e eficiente.
+
+![Hosts](https://raw.githubusercontent.com/nunesfd/hostcontrol/refs/heads/main/assets/screenshots/list_hosts.png)
 
 ## Funcionalidades
 
