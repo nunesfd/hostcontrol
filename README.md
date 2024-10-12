@@ -16,7 +16,33 @@ HostControl is a terminal-based desktop application developed with Python and th
 - User-friendly terminal-based interface
 - Keyboard shortcuts for quick actions
 
-## Installation
+## IMPORTANT - Before install
+
+The `/etc/hosts` file can usually only be modified by the superuser (root), so it is necessary to grant access to the app to manage this file.
+
+- **Run as root:** This allows the app to have the necessary permissions to modify the file.
+- **Change file permissions:** Modify the permissions of `/etc/hosts` so your user account can read and write to the file.
+- **Other alternatives:** You can also use user groups, configure the `sudoers` file, or use **Polkit** to manage permissions more securely.
+
+#### Quick solution for Linux or Mac:
+```sh
+sudo chown {YOUR_USER}:{YOUR_USER} /etc/hosts
+```
+> These are simple suggestions that may resolve the issue. However, you can apply a more secure and customized solution that better fits your environment, ensuring the integrity and security of the system.
+
+## Install using Docker
+
+To install and run the application using Docker, you can use the following command:
+
+```bash
+docker run --rm --name hostcontrol -it -v /etc/hosts:/opt/hosts -v /home/{your_user}/.host_control:/opt/host_control_db nunesfd/hostcontrol
+```
+
+Replace **your_user** with name of **your user**. 
+For more details about the parameters used in this command, visit:
+<https://hub.docker.com/r/nunesfd/hostcontrol>
+
+## Install using Python (Traditional Method)
 
 ### Prerequisites
 
@@ -51,21 +77,7 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
-### 4. Important
-
-The `/etc/hosts` file can usually only be modified by the superuser (root), so it is necessary to grant access to the app to manage this file.
-
-- **Run as root:** This allows the app to have the necessary permissions to modify the file.
-- **Change file permissions:** Modify the permissions of `/etc/hosts` so your user account can read and write to the file.
-- **Other alternatives:** You can also use user groups, configure the `sudoers` file, or use **Polkit** to manage permissions more securely.
-
-#### Quick solution for Linux or Mac:
-```sh
-sudo chown {YOUR_USER}:{YOUR_USER} /etc/hosts
-```
-> These are simple suggestions that may resolve the issue. However, you can apply a more secure and customized solution that better fits your environment, ensuring the integrity and security of the system.
-
-### 5. Run the application
+### 4. Run the application
 
 After installing the dependencies, you can run the app using:
 

@@ -16,7 +16,33 @@ HostControl é uma aplicação desktop baseada em terminal, desenvolvida com Pyt
 - Interface amigável baseada em terminal
 - Atalhos de teclado para ações rápidas
 
-## Instalação
+### IMPORTANTE - Antes da instalação
+
+O arquivo `/etc/hosts` geralmente só pode ser modificado pelo superusuário (root), então é necessário conceder acesso ao app para que ele consiga gerenciar esse arquivo.
+
+- **Executar como root:** Isso permite que o app tenha as permissões necessárias para alterar o arquivo.
+- **Alterar as permissões do arquivo:** Modifique as permissões de `/etc/hosts` para que sua conta de usuário possa ler e escrever no arquivo.
+- **Outras alternativas:** Também é possível usar grupos de usuários, configurar o arquivo `sudoers`, ou utilizar o **Polkit** para gerenciar as permissões de forma mais segura.
+
+#### Solução rápida para Linux ou Mac:
+```sh
+sudo chown {MEU_USUARIO}:{MEU_USUARIO} /etc/hosts
+```
+> Essas são sugestões simples que podem resolver o problema. No entanto, você pode aplicar uma solução mais segura e personalizada, que se ajuste melhor ao seu ambiente, garantindo a integridade e a segurança do sistema.
+
+## Instalar usando Docker
+
+Para instalar e rodar a aplicação usando docker você pode usar o seguinte comando:
+
+```bash
+docker run --rm --name hostcontrol -it -v /etc/hosts:/opt/hosts -v /home/{your_user}/.host_control:/opt/host_control_db nunesfd/hostcontrol
+```
+
+Altere **your_user** pelo nome do **seu usuário**. 
+Para mais detalhes sobre os parâmetros usados nesse comando, acesse:
+<https://hub.docker.com/r/nunesfd/hostcontrol>
+
+## Instalar usando python
 
 ### Pré-requisitos
 
@@ -50,22 +76,7 @@ Instale os pacotes Python necessários:
 ```bash
 pip install -r requirements.txt
 ```
-
-### 4. Importante
-
-O arquivo `/etc/hosts` geralmente só pode ser modificado pelo superusuário (root), então é necessário conceder acesso ao app para que ele consiga gerenciar esse arquivo.
-
-- **Executar como root:** Isso permite que o app tenha as permissões necessárias para alterar o arquivo.
-- **Alterar as permissões do arquivo:** Modifique as permissões de `/etc/hosts` para que sua conta de usuário possa ler e escrever no arquivo.
-- **Outras alternativas:** Também é possível usar grupos de usuários, configurar o arquivo `sudoers`, ou utilizar o **Polkit** para gerenciar as permissões de forma mais segura.
-
-#### Solução rápida para Linux ou Mac:
-```sh
-sudo chown {MEU_USUARIO}:{MEU_USUARIO} /etc/hosts
-```
-> Essas são sugestões simples que podem resolver o problema. No entanto, você pode aplicar uma solução mais segura e personalizada, que se ajuste melhor ao seu ambiente, garantindo a integridade e a segurança do sistema.
-
-### 5. Executar a aplicação
+### 4. Executar a aplicação
 
 Depois de instalar as dependências, você pode rodar o app usando:
 
