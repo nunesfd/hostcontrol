@@ -12,6 +12,7 @@ from textual.events import Message
 from textual.reactive import reactive
 from textual.binding import Binding
 
+from ui.host.multi_host_form import MultiHostFormView
 from ui.widgets.box_message import BoxMessage
 from ui.widgets.confirmation import Confirmation
 
@@ -44,6 +45,7 @@ class HostMainView(Static):
 
     BINDINGS = [
         ("a", "add_host", "add"),
+        ("A", "add_multi_host", "add multi"),
         ("e", "edit_host", "edit"),
         ("r", "remove_host", "remove"),
         Binding("escape", "exit", "go back", show=False),
@@ -95,6 +97,10 @@ class HostMainView(Static):
     # add host
     def action_add_host(self) -> None:
         self.app.push_screen(HostFormView(group_id=self.group.id, group_name=self.group.name), self.handle_host_created_or_updated)
+
+    def action_add_multi_host(self) -> None:
+        self.app.push_screen(MultiHostFormView(group_id=self.group.id, group_name=self.group.name), self.handle_host_created_or_updated)
+
 
     def handle_host_created_or_updated(self, has_created: bool) -> None:
         if has_created is True:

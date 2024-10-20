@@ -28,6 +28,14 @@ class Confirmation(ModalScreen):
         event.stop()
         self.dismiss("no")
 
+    def key_right(self, event) -> None:
+        event.stop()
+        self.focus_next()
+
+    def key_left(self, event) -> None:
+        event.stop()
+        self.focus_next()
+
     @on(Button.Pressed)
     def on_button_pressed(self, event):
         self.dismiss(event.button.id)

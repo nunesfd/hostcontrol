@@ -163,6 +163,16 @@ Footer {
 .modal.host-form .host-input {
     margin: 1 0 0 0;
 }
+
+.modal.multi-host-form .container {
+    width: 70;
+    height: auto;
+}
+
+.modal.multi-host-form .host-input {
+    height: 10;
+}
+
 /* MODALS SIZES END */
 
 .list-hosts ListItem{
