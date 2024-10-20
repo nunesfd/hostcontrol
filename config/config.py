@@ -4,7 +4,7 @@ import getpass
 from pathlib import Path
 
 APP_NAME = "HostControl"
-APP_VERSION = "0.0.1 (Alpha)"
+APP_VERSION = "0.0.2 (Alpha)"
 
 ENV_HOSTS_PATH = "HOSTCTL_HOSTS_PATH"
 ENV_DB_PATH = "HOSTCTL_DB_PATH"
